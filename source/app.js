@@ -33,7 +33,7 @@ function getCurrentWeatherForMyLocation() {
         <h2>Current Conditions : ${json.name}</h2>
         <img src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png" />
         <div class="current">
-          <div class="temp">${currentWeather}</div>
+          <div class="temp">${currentWeather.toFixed(1)}</div>
           <div class="condition">${json.weather[0].description}</div>
         </div>       
       </div>
@@ -70,56 +70,66 @@ function getCurrentWeatherForMyLocation() {
 
     let tempFiveMin =Math.min((json.list[32].main.temp_min)+(-273.15), (json.list[33].main.temp_min)+(-273.15), (json.list[34].main.temp_min)+(-273.15), (json.list[35].main.temp_min)+(-273.15), (json.list[36].main.temp_min)+(-273.15), (json.list[37].main.temp_min)+(-273.15), (json.list[38].main.temp_min)+(-273.15), (json.list[39].main.temp_min)+(-273.15)); 
 
-    let date1 = new Date(json.list[0].dt_txt);
-    let date2 = new Date(json.list[8].dt_txt);
-    let date3 = new Date(json.list[16].dt_txt);
-    let date4 = new Date(json.list[24].dt_txt);
-    let date5 = new Date(json.list[32].dt_txt);
-    let forecast = "";   
+    let days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ];
+
+    let day1 = days[new Date(json.list[0].dt_txt).getDay()];
+    let day2 = days[new Date(json.list[8].dt_txt).getDay()];
+    let day3 = days[new Date(json.list[15].dt_txt).getDay()];
+    let day4 = days[new Date(json.list[24].dt_txt).getDay()];
+    let day5 = days[new Date(json.list[32].dt_txt).getDay()];
+    let forecast = "";
       forecast += `
       <div class="forecast">
         <div class="day">
-          <h3>${date1}</h3>
+          <h3>${day1}</h3>
           <img src="http://openweathermap.org/img/wn/${json.list[0].weather[0].icon}@2x.png" />
           <div class="description">${json.list[0].weather[0].description}</div>
             <div class="temp">
-              <span class="high">${tempOneMax}℃</span>/<span class="low">${(json.list[0].main.temp_min)+(-273.15)}℃</span>
+              <span class="high">${tempOneMax.toFixed(1)}℃</span>/<span class="low">${tempOneMin.toFixed(1)}℃</span>
             </div>
           </div>
         </div>
         <div class="day">
-          <h3>${date2}</h3>
+          <h3>${day2}</h3>
           <img src="http://openweathermap.org/img/wn/${json.list[8].weather[0].icon}@2x.png" />
           <div class="description">${json.list[8].weather[0].description}</div>
             <div class="temp">
-              <span class="high">${tempTwoMax}℃</span>/<span class="low">${tempTwoMin}℃</span>
+              <span class="high">${tempTwoMax.toFixed(1)}℃</span>/<span class="low">${tempTwoMin.toFixed(1)}℃</span>
             </div>
           </div>
         </div>
         <div class="day">
-          <h3>${date3}</h3>
+          <h3>${day3}</h3>
           <img src="http://openweathermap.org/img/wn/${json.list[16].weather[0].icon}@2x.png" />
           <div class="description">${json.list[16].weather[0].description}</div>
             <div class="temp">
-              <span class="high">${tempThreeMax}℃</span>/<span class="low">${tempThreeMin}℃</span>
+              <span class="high">${tempThreeMax.toFixed(1)}℃</span>/<span class="low">${tempThreeMin.toFixed(1)}℃</span>
             </div>
           </div>
         </div>
         <div class="day">
-          <h3>${date4}</h3>
+          <h3>${day4}</h3>
           <img src="http://openweathermap.org/img/wn/${json.list[24].weather[0].icon}@2x.png" />
           <div class="description">${json.list[24].weather[0].description}</div>
             <div class="temp">
-              <span class="high">${tempFourMax}℃</span>/<span class="low">${tempFourMin}℃</span>
+              <span class="high">${tempFourMax.toFixed(1)}℃</span>/<span class="low">${tempFourMin.toFixed(1)}℃</span>
             </div>
           </div>
         </div>
         <div class="day">
-          <h3>${date5}</h3>
+          <h3>${day5}</h3>
           <img src="http://openweathermap.org/img/wn/${json.list[32].weather[0].icon}@2x.png" />
           <div class="description">${json.list[32].weather[0].description}</div>
             <div class="temp">
-              <span class="high">${tempFiveMax}℃</span>/<span class="low">${tempFiveMin}℃</span>
+              <span class="high">${tempFiveMax.toFixed(1)}℃</span>/<span class="low">${tempFiveMin.toFixed(1)}℃</span>
             </div>
           </div>
         </div>
