@@ -13,8 +13,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
 })
 
 function getCurrentWeatherForMyLocation() {
-  console.log(lat, lon);
-
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
   .then(resp => {
     if(resp.ok) {
@@ -27,16 +25,15 @@ function getCurrentWeatherForMyLocation() {
     console.log(json)
     let currentWeather = ((json.main.temp)+(-273.15));
     current.insertAdjacentHTML('afterbegin', `
-      <div class="current-conditions">
-        <h2>Current Conditions : ${json.name}</h2>
-        <img src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png" />
-        <div class="current">
-          <div class="temp">${currentWeather.toFixed(1)}</div>
-          <div class="condition">${json.weather[0].description}</div>
-        </div>       
-      </div>
-      `);         
+      <h2>Current Conditions : ${json.name}</h2>
+      <img src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png" />
+      <div class="current">
+        <div class="temp">${currentWeather.toFixed(1)}</div>
+        <div class="condition">${json.weather[0].description}</div>
+      </div>       
+    `);         
   })
+
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
   .then(resp => {
     if(resp.ok) {
@@ -84,55 +81,52 @@ function getCurrentWeatherForMyLocation() {
     let day4 = days[new Date(json.list[28].dt_txt).getDay()];
     let day5 = days[new Date(json.list[36].dt_txt).getDay()];
 
-      forecast.insertAdjacentHTML('afterbegin',`      
-        <div class="day">
-          <h3>${day1}</h3>
-          <img src="http://openweathermap.org/img/wn/${json.list[4].weather[0].icon}@2x.png" />
-          <div class="description">${json.list[0].weather[0].description}</div>
-            <div class="temp">
-              <span class="high">${tempOneMax.toFixed(1)}℃</span>/<span class="low">${tempOneMin.toFixed(1)}℃</span>
-            </div>
+    forecast.insertAdjacentHTML('afterbegin',
+      `<div class="day">
+        <h3>${day1}</h3>
+        <img src="http://openweathermap.org/img/wn/${json.list[4].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[0].weather[0].description}</div>
+          <div class="temp">
+            <span class="high">${tempOneMax.toFixed(1)}℃</span>/<span class="low">${tempOneMin.toFixed(1)}℃</span>
           </div>
         </div>
-        <div class="day">
-          <h3>${day2}</h3>
-          <img src="http://openweathermap.org/img/wn/${json.list[12].weather[0].icon}@2x.png" />
-          <div class="description">${json.list[8].weather[0].description}</div>
-            <div class="temp">
-              <span class="high">${tempTwoMax.toFixed(1)}℃</span>/<span class="low">${tempTwoMin.toFixed(1)}℃</span>
-            </div>
+      </div>
+      <div class="day">
+        <h3>${day2}</h3>
+        <img src="http://openweathermap.org/img/wn/${json.list[12].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[8].weather[0].description}</div>
+          <div class="temp">
+            <span class="high">${tempTwoMax.toFixed(1)}℃</span>/<span class="low">${tempTwoMin.toFixed(1)}℃</span>
           </div>
         </div>
-        <div class="day">
-          <h3>${day3}</h3>
-          <img src="http://openweathermap.org/img/wn/${json.list[20].weather[0].icon}@2x.png" />
-          <div class="description">${json.list[16].weather[0].description}</div>
-            <div class="temp">
-              <span class="high">${tempThreeMax.toFixed(1)}℃</span>/<span class="low">${tempThreeMin.toFixed(1)}℃</span>
-            </div>
+      </div>
+      <div class="day">
+        <h3>${day3}</h3>
+        <img src="http://openweathermap.org/img/wn/${json.list[20].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[16].weather[0].description}</div>
+          <div class="temp">
+            <span class="high">${tempThreeMax.toFixed(1)}℃</span>/<span class="low">${tempThreeMin.toFixed(1)}℃</span>
           </div>
         </div>
-        <div class="day">
-          <h3>${day4}</h3>
-          <img src="http://openweathermap.org/img/wn/${json.list[28].weather[0].icon}@2x.png" />
-          <div class="description">${json.list[24].weather[0].description}</div>
-            <div class="temp">
-              <span class="high">${tempFourMax.toFixed(1)}℃</span>/<span class="low">${tempFourMin.toFixed(1)}℃</span>
-            </div>
+      </div>
+      <div class="day">
+        <h3>${day4}</h3>
+        <img src="http://openweathermap.org/img/wn/${json.list[28].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[24].weather[0].description}</div>
+          <div class="temp">
+            <span class="high">${tempFourMax.toFixed(1)}℃</span>/<span class="low">${tempFourMin.toFixed(1)}℃</span>
           </div>
         </div>
-        <div class="day">
-          <h3>${day5}</h3>
-          <img src="http://openweathermap.org/img/wn/${json.list[36].weather[0].icon}@2x.png" />
-          <div class="description">${json.list[32].weather[0].description}</div>
-            <div class="temp">
-              <span class="high">${tempFiveMax.toFixed(1)}℃</span>/<span class="low">${tempFiveMin.toFixed(1)}℃</span>
-            </div>
+      </div>
+      <div class="day">
+        <h3>${day5}</h3>
+        <img src="http://openweathermap.org/img/wn/${json.list[36].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[32].weather[0].description}</div>
+          <div class="temp">
+            <span class="high">${tempFiveMax.toFixed(1)}℃</span>/<span class="low">${tempFiveMin.toFixed(1)}℃</span>
           </div>
         </div>
-
-      `);       
-    
+      </div>`
+    );           
   })
 }
-
