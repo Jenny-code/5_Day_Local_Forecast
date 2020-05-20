@@ -84,8 +84,8 @@ function getCurrentWeatherForMyLocation() {
     forecast.insertAdjacentHTML('afterbegin',
       `<div class="day">
         <h3>${day1}</h3>
-        <img src="http://openweathermap.org/img/wn/${json.list[4].weather[0].icon}@2x.png" />
-        <div class="description">${json.list[0].weather[0].description}</div>
+        <img src="http://openweathermap.org/img/wn/${json.list[2].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[2].weather[0].description}</div>
           <div class="temp">
             <span class="high">${tempOneMax.toFixed(1)}℃</span>/<span class="low">${tempOneMin.toFixed(1)}℃</span>
           </div>
@@ -93,8 +93,8 @@ function getCurrentWeatherForMyLocation() {
       </div>
       <div class="day">
         <h3>${day2}</h3>
-        <img src="http://openweathermap.org/img/wn/${json.list[12].weather[0].icon}@2x.png" />
-        <div class="description">${json.list[8].weather[0].description}</div>
+        <img src="http://openweathermap.org/img/wn/${json.list[10].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[10].weather[0].description}</div>
           <div class="temp">
             <span class="high">${tempTwoMax.toFixed(1)}℃</span>/<span class="low">${tempTwoMin.toFixed(1)}℃</span>
           </div>
@@ -102,8 +102,8 @@ function getCurrentWeatherForMyLocation() {
       </div>
       <div class="day">
         <h3>${day3}</h3>
-        <img src="http://openweathermap.org/img/wn/${json.list[20].weather[0].icon}@2x.png" />
-        <div class="description">${json.list[16].weather[0].description}</div>
+        <img src="http://openweathermap.org/img/wn/${json.list[18].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[18].weather[0].description}</div>
           <div class="temp">
             <span class="high">${tempThreeMax.toFixed(1)}℃</span>/<span class="low">${tempThreeMin.toFixed(1)}℃</span>
           </div>
@@ -111,8 +111,8 @@ function getCurrentWeatherForMyLocation() {
       </div>
       <div class="day">
         <h3>${day4}</h3>
-        <img src="http://openweathermap.org/img/wn/${json.list[28].weather[0].icon}@2x.png" />
-        <div class="description">${json.list[24].weather[0].description}</div>
+        <img src="http://openweathermap.org/img/wn/${json.list[26].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[26].weather[0].description}</div>
           <div class="temp">
             <span class="high">${tempFourMax.toFixed(1)}℃</span>/<span class="low">${tempFourMin.toFixed(1)}℃</span>
           </div>
@@ -120,8 +120,8 @@ function getCurrentWeatherForMyLocation() {
       </div>
       <div class="day">
         <h3>${day5}</h3>
-        <img src="http://openweathermap.org/img/wn/${json.list[36].weather[0].icon}@2x.png" />
-        <div class="description">${json.list[32].weather[0].description}</div>
+        <img src="http://openweathermap.org/img/wn/${json.list[34].weather[0].icon}@2x.png" />
+        <div class="description">${json.list[34].weather[0].description}</div>
           <div class="temp">
             <span class="high">${tempFiveMax.toFixed(1)}℃</span>/<span class="low">${tempFiveMin.toFixed(1)}℃</span>
           </div>
