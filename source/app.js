@@ -28,7 +28,7 @@ function getCurrentWeatherForMyLocation() {
       <h2>Current Conditions : ${json.name}</h2>
       <img src="http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png" />
       <div class="current">
-        <div class="temp">${currentWeather.toFixed(1)}</div>
+        <div class="temp">${currentWeather.toFixed(0)}</div>
         <div class="condition">${json.weather[0].description}</div>
       </div>       
     `);         
@@ -87,7 +87,7 @@ function getCurrentWeatherForMyLocation() {
         <img src="http://openweathermap.org/img/wn/${json.list[2].weather[0].icon}@2x.png" />
         <div class="description">${json.list[2].weather[0].description}</div>
           <div class="temp">
-            <span class="high">${tempOneMax.toFixed(1)}℃</span>/<span class="low">${tempOneMin.toFixed(1)}℃</span>
+            <span class="high">${tempOneMax.toFixed(0)}℃</span>/<span class="low">${tempOneMin.toFixed(0)}℃</span>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ function getCurrentWeatherForMyLocation() {
         <img src="http://openweathermap.org/img/wn/${json.list[10].weather[0].icon}@2x.png" />
         <div class="description">${json.list[10].weather[0].description}</div>
           <div class="temp">
-            <span class="high">${tempTwoMax.toFixed(1)}℃</span>/<span class="low">${tempTwoMin.toFixed(1)}℃</span>
+            <span class="high">${tempTwoMax.toFixed(0)}℃</span>/<span class="low">${tempTwoMin.toFixed(0)}℃</span>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ function getCurrentWeatherForMyLocation() {
         <img src="http://openweathermap.org/img/wn/${json.list[18].weather[0].icon}@2x.png" />
         <div class="description">${json.list[18].weather[0].description}</div>
           <div class="temp">
-            <span class="high">${tempThreeMax.toFixed(1)}℃</span>/<span class="low">${tempThreeMin.toFixed(1)}℃</span>
+            <span class="high">${tempThreeMax.toFixed(0)}℃</span>/<span class="low">${tempThreeMin.toFixed(0)}℃</span>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@ function getCurrentWeatherForMyLocation() {
         <img src="http://openweathermap.org/img/wn/${json.list[26].weather[0].icon}@2x.png" />
         <div class="description">${json.list[26].weather[0].description}</div>
           <div class="temp">
-            <span class="high">${tempFourMax.toFixed(1)}℃</span>/<span class="low">${tempFourMin.toFixed(1)}℃</span>
+            <span class="high">${tempFourMax.toFixed(0)}℃</span>/<span class="low">${tempFourMin.toFixed(0)}℃</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ function getCurrentWeatherForMyLocation() {
         <img src="http://openweathermap.org/img/wn/${json.list[34].weather[0].icon}@2x.png" />
         <div class="description">${json.list[34].weather[0].description}</div>
           <div class="temp">
-            <span class="high">${tempFiveMax.toFixed(1)}℃</span>/<span class="low">${tempFiveMin.toFixed(1)}℃</span>
+            <span class="high">${tempFiveMax.toFixed(0)}℃</span>/<span class="low">${tempFiveMin.toFixed(0)}℃</span>
           </div>
         </div>
       </div>`
