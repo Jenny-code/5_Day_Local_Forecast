@@ -1,0 +1,27 @@
+{
+  "name": "jenniferungerassignmenttwoofflinefirstjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jenny-code/AssignmentTwoOfflineFirstJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jenny-code/AssignmentTwoOfflineFirstJS/issues"
+  },
+  "homepage": "https://github.com/Jenny-code/AssignmentTwoOfflineFirstJS#readme"
+}
